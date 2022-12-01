@@ -4,12 +4,11 @@
 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 @endsection
 @section('content')
-
 		<!-- start profile -->
 		<section class="jumbotron text-center">
 			<img src="./assets/img/pic1(1).jpg" alt="silhuette" width="10%" class="rounded-circle" />
-			<h4 class="display-8 pt-4">Wayan Putu,S.S.,M.S.,Ph.D</h4>
-			<p class="lead">English Professional Guide</p>
+			<h4 class="display-8 pt-4">{{$guide->name}}</h4>
+			<p class="lead">{{$guide->status}}</p>
 			<p>
 				<i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i
 				><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i
@@ -41,6 +40,7 @@
 		<section id="pricing">
 			<div class="container">
 				<div class="row pt-8 pb-5">
+					@foreach ($guide->ticket as $t)
 					<div class="col-lg-4">
 						<div class="card card-margin">
 							<div class="card-header no-border">
@@ -54,19 +54,16 @@
 											<span class="widget-49-date-month">BEST</span>
 										</div>
 										<div class="widget-49-meeting-info">
-											<span class="widget-49-pro-title">Regular (Best Seller)</span>
-											<span class="widget-49-meeting-time">05:00 AM to 12.00 PM</span>
+											<span class="widget-49-pro-title">{{$t->name}}</span>
+											<span class="widget-49-meeting-time">{{$t->price}}</span>
 										</div>
 									</div>
 									<ol class="widget-49-meeting-points">
 										<p class="pt-2 fw-bold">Included :</p>
-										<li class="widget-49-meeting-item">
-											<span>Max 2 destination, different place</span>
-										</li>
-										<li class="widget-49-meeting-item"><span>Booking hotel service</span></li>
-										<li class="widget-49-meeting-item">
-											<span>car (3 capacity) and driver</span>
-										</li>
+										<!-- <li class="widget-49-meeting-item"> -->
+											<span>{{$t->included}}</span>
+										<!-- </li> -->
+									
 									</ol>
 									<div class="widget-49-meeting-action">
 										<a href="login.html" class="btn btn-sm btn-flash-border-primary btn-secondary"
@@ -77,7 +74,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4">
+					@endforeach
+					<!-- <div class="col-lg-4">
 						<div class="card card-margin">
 							<div class="card-header no-border">
 								<h5 class="card-title">TICKET</h5>
@@ -260,9 +258,9 @@
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
+						</div> 
+					</div> -->
+				</div> 
 			</div>
 		</section>
 		<!-- end price -->

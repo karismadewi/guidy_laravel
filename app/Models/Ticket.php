@@ -5,19 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Guide extends Model
+class Ticket extends Model
 {
     use HasFactory;
     protected $fillable = [
         'id',
+        'idGuide',
         'name',
-        'status',
-        'best_review',
-        'profile',
+        'price',
+        'included',
     ];
-    
-    public function ticket(){
-        return $this->hasMany(Ticket::class,'idGuide','id');
-    }
-
 }

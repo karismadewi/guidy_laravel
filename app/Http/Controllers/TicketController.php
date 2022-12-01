@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Guide;
+use App\Models\Ticket;
 use Illuminate\Http\Request;
 
-class GuideController extends Controller
+class TicketController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class GuideController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class GuideController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Guide  $guide
+     * @param  \App\Models\Ticket  $ticket
      * @return \Illuminate\Http\Response
      */
-    public function show(Guide $guide)
+    public function show(Ticket $ticket)
     {
         //
     }
@@ -52,10 +52,10 @@ class GuideController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Guide  $guide
+     * @param  \App\Models\Ticket  $ticket
      * @return \Illuminate\Http\Response
      */
-    public function edit(Guide $guide)
+    public function edit(Ticket $ticket)
     {
         //
     }
@@ -64,10 +64,10 @@ class GuideController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Guide  $guide
+     * @param  \App\Models\Ticket  $ticket
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Guide $guide)
+    public function update(Request $request, Ticket $ticket)
     {
         //
     }
@@ -75,10 +75,10 @@ class GuideController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Guide  $guide
+     * @param  \App\Models\Ticket  $ticket
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Guide $guide)
+    public function destroy(Ticket $ticket)
     {
         //
     }

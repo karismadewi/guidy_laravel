@@ -31,22 +31,24 @@
 					<!-- <hr style="width: 100px; margin: auto; color: black" /> -->
 				</div>
 				<div class="row content-center gap-4">
+					@foreach($guide as $g)
 					<div class="col-sm d-flex justify-content-center">
 						<div class="card" style="width: 18rem">
 							<div class="gambar">
-								<a href="./profile" target="blank">
-									<img src="./assets/img/pic1.jpg" width="50%" class="card-img-top" alt="..."
+								<a href="./galery/{{$g->id}}" target="blank">
+									<img src="" width="50%" class="card-img-top" alt="..."
 								/></a>
 							</div>
 							<div class="card-body">
-								<h5 class="card-title">Wayan</h5>
+								<h5 class="card-title">{{$g->name}}</h5>
 								<p class="card-text">
-									"Find the place that you can enjoy your joy. Let begin our journey"
+									{{$g->status}}
 								</p>
 							</div>
 						</div>
 					</div>
-					<div class="col-sm d-flex justify-content-center">
+					@endforeach
+					<!-- <div class="col-sm d-flex justify-content-center">
 						<div class="card" style="width: 18rem">
 							<div class="gambar">
 								<a href="#">
@@ -121,8 +123,8 @@
 								</p>
 							</div>
 						</div>
-					</div>
-				</div>
+					</div>-->
+				</div> 
 				<div class="pt-5 pb-5">
 					<a class="btn btn-primary" href="#about">Start to searching your own guide!</a>
 				</div>

@@ -13,14 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('guides', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('status');
-            $table->integer('best_review')->nullable();
-            $table->string('profile')->nullable();
-            $table->timestamps();
-            $table->integer('guideId')->unsigned();
+        Schema::table('guides', function (Blueprint $table) {
+            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -31,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guides');
+        Schema::table('guides', function (Blueprint $table) {
+            //
+        });
     }
 };

@@ -23,6 +23,6 @@ Route::post('/login',[AuthController::class, 'login']);
 
 
 Route::get('/index', [PageController::class, 'landingPage']);
-Route::get('/galery', [PageController::class, 'ProfilePage']);
+Route::get('/galery/{id}', [PageController::class, 'ProfilePage']);
 
 
