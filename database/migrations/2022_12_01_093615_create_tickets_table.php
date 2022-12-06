@@ -14,12 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tickets', function (Blueprint $table) {
-            $table->id();
-            $table->integer('idGuide');
+            $table->id('ticket_id');
+            $table->bigInteger('guide_id')->unsigned();
             $table->string('name');
             $table->integer('price');
-            $table->string('included');
+            $table->string('included')->nullable();
             $table->timestamps();
+            $table->foreign('guide_id')->references('user_id')->on('guides')->onDelete('cascade');   
         });
     }
 

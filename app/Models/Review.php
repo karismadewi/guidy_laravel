@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Ticket extends Model
+class Review extends Model
 {
-    use HasFactory;
     protected $fillable = [
-        'ticket_id',
+        'review_id',
         'guide_id',
-        'name',
-        'price',
-        'included',
-    ];
-}
+        "user_id",
+        "rating",
+        "content",
+]}

@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('guides', function (Blueprint $table) {
-            $table->bigInteger('user_id')->unsigned();
-            $table->string('name');
-            $table->string('status');
-            $table->integer('best_review')->nullable();
-            $table->string('profile')->nullable();
+        Schema::create('reviews', function (Blueprint $table) {
+            $table->id('review_id');
+            $table->bigInteger("guide_id")->unsigned();
+            $table->bigInteger("user_id")->unsigned();
+            $table->integer("rating"); 
+            $table->text("content");
             $table->timestamps();
+            $table->foreign('guide_id')->references('user_id')->on('guides')->onDelete('cascade');
             $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade');
         });
     }
@@ -31,6 +32,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guides');
+        Schema::dropIfExists('reviews');
+
     }
 };
